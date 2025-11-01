@@ -64,3 +64,14 @@ class Program
 }
 ## CreatorA - визначає який саме продукт потрібно створити || Program - працює через абстракції, не знаючи про конкретні типи
 
+## Приклад розширення
+class ProductB : IProduct
+{
+    public void Operation() => Console.WriteLine("ProductB created");
+}
+
+class CreatorB : Creator
+{
+    public override IProduct FactoryMethod() => new ProductB();
+}
+
